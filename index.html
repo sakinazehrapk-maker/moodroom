@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="app">
+    <aside class="sidebar">
+        <h2>Moods</h2>
+        <button class="mood-btn" data-mood="happy">
+            Happy
+        </button>
+        <button class="mood-btn" data-mood="stressed">
+            Stressed
+        </button>
+        <button class="mood-btn" data-mood="sleepy">
+            Sleepy
+        </button>
+        <button class="mood-btn" data-mood="creative">
+            Creative
+        </button>
+        <button class="mood-btn" data-mood="productive">
+            Productive
+        </button>
+    </aside>
+    <div class="recommendations">
+    <h3>Current Mood</h3>
+    <p id="lighting">Lighting</p>
+    <p id="music">Music</p>
+    <p id="drink">Drink</p>
+    <p id="scent">Scent</p>
+</div>
 <div class="room-container">
     <div class="room">
         <img src="assets/room/room-background.png"
@@ -22,6 +48,7 @@
 <img src="assets/furniture/lamp.png" class="layer lamp">
 <img src="assets/furniture/plant.png" class="layer plant">
     </div>
+</div>
 </div>
 <script src="script.js"></script>
 </body>
