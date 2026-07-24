@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Room Designer</title>
+    <title>Mood Room</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="room-container">
     <div class="room">
-        <div class="wall"></div>
-        <div class="window">
-            <div class="sky"></div>
-        </div>
-        <div class="lamp"></div>
-        <div class="bed"></div>
-        <div class="desk"></div>
-        <div class="plant"></div>
-        <div class="floor"></div>
+        <img src="assets/room/room-background.png"
+             class="layer background">
+        <img src="assets/room/window.png"
+             class="layer window">
+        <img src="assets/room/curtains.png"
+             class="layer curtains">
+<img src="assets/furniture/bed.png" class="layer bed">
+<img src="assets/furniture/rug.png" class="layer rug">
+<img src="assets/furniture/desk.png" class="layer desk">
+<img src="assets/furniture/chair.png" class="layer chair">
+<img src="assets/furniture/lamp.png" class="layer lamp">
+<img src="assets/furniture/plant.png" class="layer plant">
     </div>
-    <script src="script.js"></script>
+</div>
+<script src="script.js"></script>
 </body>
-</html>
