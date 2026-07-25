@@ -30,8 +30,9 @@ body{
 }
 .desk{
     width:260px;
-    left:120px;
-    top:330px;
+    left:90px;
+    top:210px;
+    z-index:3;
 }
 .chair{
     width:120px;
@@ -44,9 +45,10 @@ body{
     top:180px;
 }
 .plant{
-    width:110px;
-    left:70px;
-    top:310px;
+    width:90px;
+    left:50px;
+    top:250px;
+    z-index:2;
 }
 .app{
     display: flex;
@@ -106,4 +108,14 @@ body{
 }
 .recommendations p{
     margin-top:12px;
+}
+#lightingOverlay{
+    position:absolute;
+    inset:0;
+    background:transparent;
+    transition:.6s;
+    pointer-events:none;
+}
+.layer{
+transition:.6s ease;
 }
