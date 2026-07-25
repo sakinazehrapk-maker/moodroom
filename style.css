@@ -119,3 +119,15 @@ body{
 .layer{
 transition:.6s ease;
 }
+.window{
+    width:230px;
+    left:330px;
+    top:40px;
+    z-index:2;
+}
+.drink{
+    width:55px;
+    left:210px;
+    top:285px;
+    z-index:8;
+}

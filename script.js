@@ -1,7 +1,8 @@
+const windowImg = document.getElementById("window");
+const lightingOverlay = document.getElementById("lightingOverlay");
 const moods={
 happy:{
-wallpaper:"assets/room/wallpaper-pink.png",
-window:"assets/weather/sunny.png",
+window:"assets/room/sunny.png",
 drink:"assets/drinks/coffee.png",
 overlay:"rgba(255,220,120,.08)",
 lighting:"Bright Sunshine",
@@ -9,8 +10,7 @@ music:"Indie Pop",
 scent:"Citrus"
 },
 stressed:{
-wallpaper:"assets/room/wallpaper-beige.png",
-window:"assets/weather/rain.png",
+window:"assets/room/rain.png",
 drink:"assets/drinks/tea.png",
 overlay:"rgba(255,180,80,.12)",
 lighting:"Warm Amber",
@@ -22,10 +22,6 @@ const buttons = document.querySelectorAll(".mood-btn");
 buttons.forEach(button=>{
     button.addEventListener("click",()=>{
         const mood = moods[button.dataset.mood];
-        wallpaper.src=mood.wallpaper;
-        window.src=mood.window;
-        drinkImg.src=mood.drink;
-        lightingOverlay.style.background=mood.overlay;
         document.getElementById("lighting").innerHTML =
         mood.lighting;
         document.getElementById("music").innerHTML =
@@ -34,5 +30,8 @@ buttons.forEach(button=>{
         mood.drink;
         document.getElementById("scent").innerHTML =
         mood.scent;
+        windowImg.src = mood.window;
+        drinkImg.src=mood.drink;
+        lightingOverlay.style.background=mood.overlay;
     });
 });
