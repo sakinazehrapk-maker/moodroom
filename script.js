@@ -7,6 +7,9 @@ const drink = document.getElementById("drink");
 const scent = document.getElementById("scent");
 const lighting = document.getElementById("lighting");
 const decor1 = document.getElementById("decor1");
+const bgMusic = document.getElementById("bgMusic");
+const songName = document.getElementById("songName");
+const toggleMusic = document.getElementById("toggleMusic");
 const moods = {
     happy: {
         weather:"assets/weather/sunny.png",
@@ -16,7 +19,9 @@ const moods = {
         lighting: "Bright Sunshine",
         music:"Indie Pop",
         scent: "Citrus",
-        decor1:"assets/decorations/happy/1.png"
+        decor1:"assets/decorations/happy/1.png",
+        song:"Morning Sunshine",
+        musicFile:"assets/music/happy.mp3"
     },
     stressed: {
         weather: "assets/weather/rain.png",
@@ -26,7 +31,9 @@ const moods = {
         lighting: "Warm Amber",
         music: "Lo-fi Rain",
         scent: "Lavender",
-        decor1:"assets/decorations/stressed/flowers.png"
+        decor1:"assets/decorations/stressed/flowers.png",
+        song:"Lo-fi Rain",
+        musicFile:"assets/music/stressed.mp3"
     },
     sleepy: {
         weather: "assets/weather/night.png",
@@ -36,7 +43,9 @@ const moods = {
         lighting: "Soft Moonlight",
         music: "Soft Piano",
         scent: "Vanilla",
-        decor1:"assets/decorations/sleepy/pillow.png"
+        decor1:"assets/decorations/sleepy/pillow.png",
+        song:"Night Piano",
+        musicFile:"assets/music/sleepy.mp3"
     },
     creative: {
         weather: "assets/weather/sunset.png",
@@ -46,7 +55,9 @@ const moods = {
         lighting: "Purple LED Glow",
         music: "Jazz & Chill",
         scent: "Peppermint",
-        decor1:"assets/decorations/creative/art.png"
+        decor1:"assets/decorations/creative/art.png",
+        song:"Dreamy Jazz",
+        musicFile:"assets/music/creative.mp3"
     },
     productive: {
         weather: "assets/weather/cloudy.png",
@@ -56,7 +67,9 @@ const moods = {
         lighting: "Cool White",
         music: "Focus Beats",
         scent: "Eucalyptus",
-        decor1:"assets/decorations/productive/laptop.png"
+        decor1:"assets/decorations/productive/laptop.png",
+        song:"Deep Focus",
+        musicFile:"assets/music/productive.mp3"
     }
 };
 buttons.forEach(button => {
@@ -71,5 +84,18 @@ buttons.forEach(button => {
         drink.textContent =mood.drinkName;
         scent.textContent =mood.scent;
         decor1.src = mood.decor1;
+        bgMusic.src = mood.musicFile;
+        songName.textContent = mood.song;
+        bgMusic.play();
+        toggleMusic.textContent = "⏸ Pause";
     });
+});
+toggleMusic.addEventListener("click",()=>{
+    if(bgMusic.paused){
+        bgMusic.play();
+        toggleMusic.textContent="⏸ Pause";
+    }else{
+        bgMusic.pause();
+        toggleMusic.textContent="▶ Play";
+    }
 });

@@ -140,3 +140,30 @@ transition:.6s ease;
     left:650px;
     top:300px;
 }
+.music-card{
+    margin-top:50px;
+    padding:20px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-align:center;
+}
+.music-card button{
+    margin-top:15px;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    background:#ffcde1;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+.music-card button:hover{
+    background:#ffb7d3;
+}
+.left-panel{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:150px;
+}

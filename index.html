@@ -26,12 +26,19 @@
             Productive
         </button>
     </aside>
+    <div class="left-panel">
     <div class="recommendations">
-    <h3>Current Mood</h3>
-    <p id="lighting">Lighting</p>
-    <p id="music">Music</p>
-    <p id="drink">Drink</p>
-    <p id="scent">Scent</p>
+        <h3>Current Mood</h3>
+        <p id="lighting">Lighting</p>
+        <p id="music">Music</p>
+        <p id="drink">Drink</p>
+        <p id="scent">Scent</p>
+    </div>
+    <div class="music-card">
+        <h3>Now Playing</h3>
+        <p id="songName">Nothing Playing</p>
+        <button id="toggleMusic">▶ Play</button>
+    </div>
 </div>
 <div class="room-container">
     <div class="room">
@@ -49,5 +56,6 @@
     </div>
 </div>
 </div>
+<audio id="bgMusic" loop></audio>
 <script src="script.js"></script>
 </body>
