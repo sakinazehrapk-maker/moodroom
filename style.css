@@ -167,3 +167,31 @@ transition:.6s ease;
     gap:10px;
     width:150px;
 }
+.checklist-card{
+    width:250px;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-top:20px;
+}
+.checklist-card h3{
+    color:#d66b95;
+    margin-bottom:15px;
+}
+.checklist-card ul{
+    list-style:none;
+    padding:0;
+}
+.checklist-card li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+    font-size:15px;
+}
+.checklist-card input{
+    accent-color:#ff9fc7;
+    width:18px;
+    height:18px;
+}

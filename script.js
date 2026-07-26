@@ -10,6 +10,7 @@ const decor1 = document.getElementById("decor1");
 const bgMusic = document.getElementById("bgMusic");
 const songName = document.getElementById("songName");
 const toggleMusic = document.getElementById("toggleMusic");
+const checklist = document.getElementById("checklist");
 const moods = {
     happy: {
         weather:"assets/weather/sunny.png",
@@ -21,7 +22,13 @@ const moods = {
         scent: "Citrus",
         decor1:"assets/decorations/happy/1.png",
         song:"Morning Sunshine",
-        musicFile:"assets/music/happy.mp3"
+        musicFile:"assets/music/happy.mp3",
+        checklist:[
+    "Smile at someone",
+    "Drink water ",
+    "Go for a short walk ",
+    "Listen to your favorite song "
+],
     },
     stressed: {
         weather: "assets/weather/rain.png",
@@ -33,7 +40,13 @@ const moods = {
         scent: "Lavender",
         decor1:"assets/decorations/stressed/flowers.png",
         song:"Lo-fi Rain",
-        musicFile:"assets/music/stressed.mp3"
+        musicFile:"assets/music/stressed.mp3",
+        checklist:[
+    "Take 5 deep breaths",
+    "Drink some tea",
+    "Stretch for 5 minutes",
+    "Step away from your screen"
+],
     },
     sleepy: {
         weather: "assets/weather/night.png",
@@ -45,7 +58,13 @@ const moods = {
         scent: "Vanilla",
         decor1:"assets/decorations/sleepy/pillow.png",
         song:"Night Piano",
-        musicFile:"assets/music/sleepy.mp3"
+        musicFile:"assets/music/sleepy.mp3",
+        checklist:[
+    "Make some hot chocolate",
+    "Dim the lights",
+    "Read a few pages",
+    "Sleep before midnight"
+],
     },
     creative: {
         weather: "assets/weather/sunset.png",
@@ -57,7 +76,13 @@ const moods = {
         scent: "Peppermint",
         decor1:"assets/decorations/creative/art.png",
         song:"Dreamy Jazz",
-        musicFile:"assets/music/creative.mp3"
+        musicFile:"assets/music/creative.mp3",
+        checklist:[
+    "Sketch an idea",
+    "Listen to inspiring music",
+    "Write down new ideas",
+    "Organize your workspace"
+],
     },
     productive: {
         weather: "assets/weather/cloudy.png",
@@ -69,7 +94,13 @@ const moods = {
         scent: "Eucalyptus",
         decor1:"assets/decorations/productive/laptop.png",
         song:"Deep Focus",
-        musicFile:"assets/music/productive.mp3"
+        musicFile:"assets/music/productive.mp3",
+        checklist:[
+    "Plan today's tasks",
+    "Study for 25 minutes",
+    "Take a 5-minute break",
+    "Celebrate one small win"
+],
     }
 };
 buttons.forEach(button => {
@@ -88,6 +119,15 @@ buttons.forEach(button => {
         songName.textContent = mood.song;
         bgMusic.play();
         toggleMusic.textContent = "⏸ Pause";
+        checklist.innerHTML = "";
+        mood.checklist.forEach(task => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <input type="checkbox">
+            <span>${task}</span>
+            `;
+            checklist.appendChild(li);
+});
     });
 });
 toggleMusic.addEventListener("click",()=>{
