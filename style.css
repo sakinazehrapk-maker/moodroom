@@ -200,3 +200,28 @@ transition:.6s ease;
     color:white;
     box-shadow:0 8px 20px rgba(255,120,180,.35);
 }
+.history-card{
+    width:250px;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.history-card h3{
+    color:#d66b95;
+    margin-bottom:15px;
+}
+.history-item{
+    background:#fff6fb;
+    border-radius:12px;
+    padding:10px;
+    margin-bottom:10px;
+}
+.history-item h4{
+    margin-bottom:5px;
+    color:#444;
+}
+.history-item small{
+    color:#888;
+}

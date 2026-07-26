@@ -11,6 +11,7 @@ const bgMusic = document.getElementById("bgMusic");
 const songName = document.getElementById("songName");
 const toggleMusic = document.getElementById("toggleMusic");
 const checklist = document.getElementById("checklist");
+const historyList = document.getElementById("historyList");
 const moods = {
     happy: {
         weather:"assets/weather/sunny.png",
@@ -119,6 +120,7 @@ buttons.forEach(button => {
         songName.textContent = mood.song;
         bgMusic.play();
         toggleMusic.textContent = "⏸ Pause";
+        saveMoodHistory(moodName);
         checklist.innerHTML = "";
         mood.checklist.forEach(task => {
             const li = document.createElement("li");
@@ -139,3 +141,43 @@ toggleMusic.addEventListener("click",()=>{
         toggleMusic.textContent="▶ Play";
     }
 });
+function saveMoodHistory(moodName){
+    const history =
+        JSON.parse(localStorage.getItem("moodHistory")) || [];
+    history.unshift({
+        mood:moodName,
+        date:new Date().toLocaleDateString(),
+        time:new Date().toLocaleTimeString([],{
+            hour:"2-digit",
+            minute:"2-digit"
+        })
+    });
+    if(history.length > 10){
+        history.pop();
+    }
+    localStorage.setItem(
+        "moodHistory",
+        JSON.stringify(history)
+    );
+    loadMoodHistory();
+}
+function loadMoodHistory(){
+    const history =
+        JSON.parse(localStorage.getItem("moodHistory")) || [];
+    historyList.innerHTML = "";
+    if(history.length === 0){
+        historyList.innerHTML =
+            "<p>No moods recorded yet.</p>";
+        return;
+    }
+    history.forEach(item=>{
+        historyList.innerHTML += `
+        <div class="history-item">
+            <h4>${item.mood}</h4>
+            <small>${item.date}</small><br>
+            <small>${item.time}</small>
+        </div>
+        `;
+    });
+}
+loadMoodHistory();
