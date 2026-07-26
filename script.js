@@ -8,7 +8,7 @@ const scent = document.getElementById("scent");
 const lighting = document.getElementById("lighting");
 const moods = {
     happy: {
-        weather:"assets/room/sunny.png",
+        weather:"assets/weather/sunny.png",
         drink:"assets/drinks/coffee.png",
         drinkName: "Coffee",
         overlay: "rgba(255,220,120,0.08)",
@@ -17,7 +17,7 @@ const moods = {
         scent: "Citrus"
     },
     stressed: {
-        weather: "assets/room/rain.png",
+        weather: "assets/weather/rain.png",
         drink: "assets/drinks/tea.png",
         drinkName: "Tea",
         overlay: "rgba(255,180,80,0.12)",
@@ -26,7 +26,7 @@ const moods = {
         scent: "Lavender"
     },
     sleepy: {
-        weather: "assets/room/night.png",
+        weather: "assets/weather/night.png",
         drink: "assets/drinks/hotchocolate.png",
         drinkName: "Hot Chocolate",
         overlay: "rgba(40,50,90,0.25)",
@@ -35,7 +35,7 @@ const moods = {
         scent: "Vanilla"
     },
     creative: {
-        weather: "assets/room/sunset.png",
+        weather: "assets/weather/sunset.png",
         drink: "assets/drinks/matcha.png",
         drinkName: "Matcha Latte",
         overlay: "rgba(180,140,255,0.18)",
@@ -44,7 +44,7 @@ const moods = {
         scent: "Peppermint"
     },
     productive: {
-        weather: "assets/room/cloudy.png",
+        weather: "assets/weather/cloudy.png",
         drink: "assets/drinks/espresso.png",
         drinkName: "Espresso",
         overlay: "rgba(220,240,255,0.08)",
