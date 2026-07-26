@@ -6,6 +6,7 @@ const music = document.getElementById("music");
 const drink = document.getElementById("drink");
 const scent = document.getElementById("scent");
 const lighting = document.getElementById("lighting");
+const decor1 = document.getElementById("decor1");
 const moods = {
     happy: {
         weather:"assets/weather/sunny.png",
@@ -14,7 +15,8 @@ const moods = {
         overlay: "rgba(255,220,120,0.08)",
         lighting: "Bright Sunshine",
         music:"Indie Pop",
-        scent: "Citrus"
+        scent: "Citrus",
+        decor1:"assets/decorations/happy/1.png"
     },
     stressed: {
         weather: "assets/weather/rain.png",
@@ -23,7 +25,8 @@ const moods = {
         overlay: "rgba(255,180,80,0.12)",
         lighting: "Warm Amber",
         music: "Lo-fi Rain",
-        scent: "Lavender"
+        scent: "Lavender",
+        decor1:"assets/decorations/stressed/flowers.png"
     },
     sleepy: {
         weather: "assets/weather/night.png",
@@ -32,7 +35,8 @@ const moods = {
         overlay: "rgba(40,50,90,0.25)",
         lighting: "Soft Moonlight",
         music: "Soft Piano",
-        scent: "Vanilla"
+        scent: "Vanilla",
+        decor1:"assets/decorations/sleepy/pillow.png"
     },
     creative: {
         weather: "assets/weather/sunset.png",
@@ -41,7 +45,8 @@ const moods = {
         overlay: "rgba(180,140,255,0.18)",
         lighting: "Purple LED Glow",
         music: "Jazz & Chill",
-        scent: "Peppermint"
+        scent: "Peppermint",
+        decor1:"assets/decorations/creative/art.png"
     },
     productive: {
         weather: "assets/weather/cloudy.png",
@@ -50,7 +55,8 @@ const moods = {
         overlay: "rgba(220,240,255,0.08)",
         lighting: "Cool White",
         music: "Focus Beats",
-        scent: "Eucalyptus"
+        scent: "Eucalyptus",
+        decor1:"assets/decorations/productive/laptop.png"
     }
 };
 buttons.forEach(button => {
@@ -64,5 +70,6 @@ buttons.forEach(button => {
         music.textContent =mood.music;
         drink.textContent =mood.drinkName;
         scent.textContent =mood.scent;
+        decor1.src = mood.decor1;
     });
 });
