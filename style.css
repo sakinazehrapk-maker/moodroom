@@ -25,20 +25,15 @@ body{
     top:210px;
 }
 .rug{
-    width:350px;
+    width:200px;
     left:300px;
-    top:410px;
+    top:360px;
 }
 .desk{
     width:260px;
     left:90px;
     top:210px;
     z-index:3;
-}
-.chair{
-    width:120px;
-    left:250px;
-    top:390px;
 }
 .lamp{
     width:90px;

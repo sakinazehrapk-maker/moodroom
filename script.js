@@ -121,9 +121,12 @@ const moods = {
 };
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        const mood = moods[button.dataset.mood];
-        currentMood = mood;
+        const moodName = button.dataset.mood;
+        const mood = moods[moodName];
         if (!mood) return;
+        currentMood = mood;
+        buttons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
         windowImg.src = mood.weather;
         drinkImg.src = mood.drink;
         lightingOverlay.style.background = mood.overlay;
@@ -141,11 +144,11 @@ buttons.forEach(button => {
         mood.checklist.forEach(task => {
             const li = document.createElement("li");
             li.innerHTML = `
-            <input type="checkbox">
-            <span>${task}</span>
+                <input type="checkbox">
+                <span>${task}</span>
             `;
             checklist.appendChild(li);
-});
+        });
     });
 });
 toggleMusic.addEventListener("click",()=>{
