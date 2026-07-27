@@ -12,11 +12,18 @@ const songName = document.getElementById("songName");
 const toggleMusic = document.getElementById("toggleMusic");
 const checklist = document.getElementById("checklist");
 const historyList = document.getElementById("historyList");
+const popup = document.getElementById("popup");
+const popupTitle = document.getElementById("popupTitle");
+const popupText = document.getElementById("popupText");
+const closePopup = document.getElementById("closePopup");
+let currentMood = null;
 const moods = {
     happy: {
         weather:"assets/weather/sunny.png",
         drink:"assets/drinks/coffee.png",
         drinkName: "Coffee",
+        drinkTitle: "Coffee",
+        drinkTip: "Coffee is great for boosting energy and enjoying a cheerful morning.",
         overlay: "rgba(255,220,120,0.08)",
         lighting: "Bright Sunshine",
         music:"Indie Pop",
@@ -26,15 +33,17 @@ const moods = {
         musicFile:"assets/music/happy.mp3",
         checklist:[
     "Smile at someone",
-    "Drink water ",
-    "Go for a short walk ",
-    "Listen to your favorite song "
-],
+    "Drink water",
+    "Go for a short walk",
+    "Listen to your favorite song"
+        ]
     },
     stressed: {
         weather: "assets/weather/rain.png",
         drink: "assets/drinks/tea.png",
         drinkName: "Tea",
+        drinkTitle: "Tea",
+        drinkTip: "A warm cup of tea can help you slow down and relax after a busy day.",
         overlay: "rgba(255,180,80,0.12)",
         lighting: "Warm Amber",
         music: "Lo-fi Rain",
@@ -47,12 +56,14 @@ const moods = {
     "Drink some tea",
     "Stretch for 5 minutes",
     "Step away from your screen"
-],
+        ]
     },
     sleepy: {
         weather: "assets/weather/night.png",
         drink: "assets/drinks/hotchocolate.png",
         drinkName: "Hot Chocolate",
+        drinkTitle: "Hot Chocolate",
+        drinkTip: "Hot chocolate is perfect for winding down and relaxing before bedtime.",
         overlay: "rgba(40,50,90,0.25)",
         lighting: "Soft Moonlight",
         music: "Soft Piano",
@@ -65,12 +76,14 @@ const moods = {
     "Dim the lights",
     "Read a few pages",
     "Sleep before midnight"
-],
+        ]
     },
     creative: {
         weather: "assets/weather/sunset.png",
         drink: "assets/drinks/matcha.png",
         drinkName: "Matcha Latte",
+        drinkTitle: "Matcha Latte",
+        drinkTip: "Matcha provides a gentle energy boost while helping you stay calm and creative.",
         overlay: "rgba(180,140,255,0.18)",
         lighting: "Purple LED Glow",
         music: "Jazz & Chill",
@@ -83,12 +96,14 @@ const moods = {
     "Listen to inspiring music",
     "Write down new ideas",
     "Organize your workspace"
-],
+        ]
     },
     productive: {
         weather: "assets/weather/cloudy.png",
         drink: "assets/drinks/espresso.png",
         drinkName: "Espresso",
+        drinkTitle: "Espresso",
+        drinkTip: "Espresso is perfect for boosting focus during study or work sessions.",
         overlay: "rgba(220,240,255,0.08)",
         lighting: "Cool White",
         music: "Focus Beats",
@@ -101,12 +116,13 @@ const moods = {
     "Study for 25 minutes",
     "Take a 5-minute break",
     "Celebrate one small win"
-],
+    ]
     }
 };
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const mood = moods[button.dataset.mood];
+        currentMood = mood;
         if (!mood) return;
         windowImg.src = mood.weather;
         drinkImg.src = mood.drink;
@@ -180,4 +196,24 @@ function loadMoodHistory(){
         `;
     });
 }
+function showPopup(title,text){
+    popupTitle.textContent = title;
+    popupText.textContent = text;
+    popup.classList.add("show");
+}
+closePopup.addEventListener("click",()=>{
+    popup.classList.remove("show");
+});
+popup.addEventListener("click",(e)=>{
+    if(e.target===popup){
+        popup.classList.remove("show");
+    }
+});
+drinkImg.addEventListener("click",()=>{
+    if(!currentMood) return;
+    showPopup(
+        currentMood.drinkTitle,
+        currentMood.drinkTip
+    );
+});
 loadMoodHistory();

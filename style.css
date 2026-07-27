@@ -267,3 +267,59 @@ transition:.6s ease;
 .history-section::-webkit-scrollbar-track{
     background:transparent;
 }
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:999;
+}
+.popup.show{
+    opacity:1;
+    visibility:visible;
+}
+.popup-content{
+    width:380px;
+    max-width:90%;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    position:relative;
+    animation:popup .3s ease;
+}
+@keyframes popup{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+#closePopup{
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:none;
+    background:#ffd4e5;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+   font-size:18px;
+}
+#popupTitle{
+    color:#d66b95;
+    margin-bottom:15px;
+}
+#popupText{
+    line-height:1.6;
+    color:#555;
+}
