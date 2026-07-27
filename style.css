@@ -225,3 +225,30 @@ transition:.6s ease;
 .history-item small{
     color:#888;
 }
+.wellness-card{
+    width:280px;
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+.wellness-card h2{
+    text-align:center;
+    color:#d66b95;
+    margin-bottom:20px;
+}
+.checklist-section{
+    margin-bottom:20px;
+}
+.history-section{
+    margin-top:20px;
+}
+.divider{
+    width:100%;
+    height:2px;
+    background:linear-gradient(to right,
+        transparent,
+        #ffd3e5,
+        transparent);
+    margin:20px 0;
+}
