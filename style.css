@@ -252,3 +252,18 @@ transition:.6s ease;
         transparent);
     margin:20px 0;
 }
+.history-section{
+    max-height:220px;
+    overflow-y:auto;
+    padding-right:5px;
+}
+.history-section::-webkit-scrollbar{
+    width:6px;
+}
+.history-section::-webkit-scrollbar-thumb{
+    background:#ffc8dd;
+    border-radius:10px;
+}
+.history-section::-webkit-scrollbar-track{
+    background:transparent;
+}
